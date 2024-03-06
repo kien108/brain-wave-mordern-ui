@@ -4,7 +4,7 @@ type Props = SVGComponent & {
   white?: boolean
 }
 
-const ButtonSvg = ({ white = true, ...props }: Props) => (
+const ButtonSvg = ({ white = false, ...props }: Props) => (
   <>
     <svg
       className='absolute top-0 left-0'
