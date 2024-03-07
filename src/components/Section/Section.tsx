@@ -1,9 +1,12 @@
 import { SectionSvg } from '@/assets/svg'
+import { staggerContainer } from '@/utils'
+import { HTMLMotionProps, motion } from 'framer-motion'
 
-interface IProps extends React.HTMLAttributes<HTMLDivElement> {
+interface IProps extends HTMLMotionProps<'section'> {
   crosses?: boolean
   crossesOffset?: string
   customPaddings?: string
+  children: React.ReactNode
 }
 
 const Section = ({
@@ -15,7 +18,11 @@ const Section = ({
   ...props
 }: IProps) => {
   return (
-    <section
+    <motion.section
+      variants={staggerContainer(5, 0)}
+      initial='hidden'
+      whileInView={'show'}
+      viewport={{ once: true, amount: 0.25 }}
       {...props}
       className={`relative ${customPaddings || `py-10 lg:py-16 xl:py-20 ${crosses ? 'lg:py-32 xl:py-40' : ''} ${className || ''}`}`}
     >
@@ -29,11 +36,10 @@ const Section = ({
           <div
             className={`hidden absolute top-0 left-7.5 right-7.5 h-0.25 bg-stroke-1 ${crossesOffset && crossesOffset} pointer-events-none lg:block xl:left-10 right-10`}
           ></div>
-
-          <SectionSvg crossesOffset={crossesOffset} />
+          <SectionSvg crossesOffset={crossesOffset} />s
         </>
       )}
-    </section>
+    </motion.section>
   )
 }
 

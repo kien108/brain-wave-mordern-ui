@@ -35,7 +35,7 @@ const Rings = () => {
   )
 }
 
-export const BackgroundCircles = ({ parallaxRef }: { parallaxRef: any }) => {
+export const BackgroundCircles = ({ parallaxRef }: { parallaxRef?: any }) => {
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {

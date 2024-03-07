@@ -1,0 +1,5 @@
+export { default as Hero } from './Hero'
+export { default as Generating } from './Generating'
+export { default as Notification } from './Notification'
+export { default as Features } from './Features'
+export { default as CompanyLogos } from './CompanyLogos'

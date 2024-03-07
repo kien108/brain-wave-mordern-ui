@@ -4,6 +4,9 @@ import { useLocation } from 'react-router-dom'
 import { Button } from '..'
 import { HamburgerMenu } from '../design/Header'
 import { MenuSvg } from '@/assets/svg'
+import { motion } from 'framer-motion'
+import { fadeIn } from '@/utils'
+import { useMediaQuery } from '@/hooks/useMediaQuery.hook'
 
 interface Props {
   openNavigation: boolean
@@ -11,11 +14,14 @@ interface Props {
 }
 const Nav = ({ openNavigation, handleToggleNavigation }: Props) => {
   const pathname = useLocation()
+  const isDesktop = useMediaQuery('(min-width: 1024px)')
 
   return (
     <>
-      <nav
-        className={`${openNavigation ? 'flex' : 'hidden'} fixed top-[5rem] left-0 right-0 bottom-0 bg-n-8 lg:static lg:flex lg:mx-auto lg:bg-transparent`}
+      <motion.nav
+        variants={fadeIn('down', 'tween', 0.1, 0.25)}
+        animate={!isDesktop ? (openNavigation ? 'show' : 'hidden') : ''}
+        className={'flex fixed top-[5rem] left-0 right-0 bottom-0 bg-n-8 lg:static lg:flex lg:mx-auto lg:bg-transparent'}
       >
         <ul className='relative z-2 flex flex-col items-center justify-center m-auto lg:flex-row'>
           {navigation.map((item) => (
@@ -31,7 +37,7 @@ const Nav = ({ openNavigation, handleToggleNavigation }: Props) => {
           ))}
         </ul>
         <HamburgerMenu />
-      </nav>
+      </motion.nav>
 
       <a
         href={`#${SECTION_IDS.SIGNUP}`}
