@@ -29,8 +29,8 @@ export const fadeIn = (
 ) => {
   return {
     hidden: {
-      x: direction === 'left' ? 100 : direction === 'right' ? -100 : xDefault || 0,
-      y: direction === 'up' ? 100 : direction === 'down' ? -100 : yDefault || 0,
+      x: direction === 'left' ? 100 : direction === 'right' ? '-100%' : xDefault || 0,
+      y: direction === 'up' ? 100 : direction === 'down' ? '-100%' : yDefault || 0,
       opacity: 0
     },
     show: {

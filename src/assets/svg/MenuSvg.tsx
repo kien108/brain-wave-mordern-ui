@@ -13,7 +13,7 @@ const MenuSvg = ({ openNavigation = true, ...props }: IProps) => {
       {...props}
     >
       <rect
-        className='transition-all origin-center'
+        className='transition-all origin-center '
         y={openNavigation ? '5' : '0'}
         width='20'
         height='2'

@@ -39,8 +39,8 @@ const Hero = () => {
           </h1>
 
           <p className='body-1 max-w-3xl mx-auto mb-6 text-n-2 lg:mb-8'>
-            Unleash the power of AI within Brainwave. &nbsp; Upgrade your productivity with
-            Brainwave, the open AI chat app.
+            Unleash the power of AI within Brainwave.&nbsp;Upgrade your productivity with Brainwave,
+            the open AI chat app.
           </p>
           <Button
             href={`#${SECTION_IDS.PRICING}`}
@@ -65,7 +65,7 @@ const Hero = () => {
                   height={490}
                   className='w-full scale-[1.7] translate-y-[8%] md:-translate-y-[10%] lg:-translate-y-[23%]'
                 />
-                <Generating className='absolute left-4 right-4 bottom-5 md:bottom-8 md:w-[31rem] md:left-1/2 md:-translate-x-1/2' />
+                <Generating className='absolute  bottom-5 md:bottom-8 left-4 right-4 md:left-[20%] md:right-[20%] md:mb-8' />
                 <ScrollParallax
                   isAbsolutelyPositioned
                   shouldPause

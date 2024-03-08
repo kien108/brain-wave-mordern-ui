@@ -9,7 +9,7 @@ const CompanyLogos = ({ className, ...props }: IProps) => {
       className={className}
     >
       <h5 className='tagline mb-6 text-center text-n-1/50'>Helping people create beautiful logo</h5>
-      <ul className='flex'>
+      <ul className='flex items-center justify-between'>
         {companyLogos.map((logo, index) => (
           <li
             key={index}
@@ -18,7 +18,8 @@ const CompanyLogos = ({ className, ...props }: IProps) => {
             <img
               src={logo}
               alt='company logo'
-              className='w-[134px] h-[28px]'
+              width={134}
+              height={28}
             />
           </li>
         ))}

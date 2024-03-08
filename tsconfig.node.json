@@ -6,7 +6,7 @@
     "moduleResolution": "bundler",
     "allowSyntheticDefaultImports": true,
     "strict": true,
-    "types": ["babel__generator"],
+    "types": ["babel__generator"]
   },
   "include": ["vite.config.ts"]
 }

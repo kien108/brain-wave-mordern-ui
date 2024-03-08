@@ -6,7 +6,7 @@ interface IProps extends HTMLMotionProps<'div'> {}
 const Generating = ({ className, ...props }: IProps) => {
   return (
     <motion.div
-      variants={fadeIn('up', 'tween', 0.5, 0.5, '-50%')}
+      variants={fadeIn('up', 'tween', 0.5, 0.5)}
       className={`flex items-center h-[3.5rem] px-6 bg-n-8/80 rounded-[1.7rem] ${className || ''} text-base`}
       {...props}
     >
