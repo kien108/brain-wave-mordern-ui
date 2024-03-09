@@ -65,7 +65,10 @@ const Hero = () => {
                   height={490}
                   className='w-full scale-[1.7] translate-y-[8%] md:-translate-y-[10%] lg:-translate-y-[23%]'
                 />
-                <Generating className='absolute  bottom-5 md:bottom-8 left-4 right-4 md:left-[20%] md:right-[20%] md:mb-8' />
+                <Generating
+                  className='absolute  bottom-5 md:bottom-8 left-4 right-4 md:left-[20%] md:right-[20%] md:mb-8'
+                  variants={fadeIn('up', 'tween', 0.5, 0.5)}
+                />
                 <ScrollParallax
                   isAbsolutelyPositioned
                   shouldPause

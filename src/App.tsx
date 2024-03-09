@@ -1,4 +1,4 @@
-import { Header, Hero } from './components'
+import { Collaboration, Header, Hero, Services } from './components'
 import Benefits from './components/Section/Benefits/Benefits'
 
 function App() {
@@ -8,6 +8,8 @@ function App() {
         <Header />
         <Hero />
         <Benefits />
+        <Collaboration />
+        <Services />
       </div>
     </>
   )

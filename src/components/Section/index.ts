@@ -1,3 +1,5 @@
 export * from './Hero'
 export * from './Benefits'
+export * from './Collaboration'
+export * from './Services'
 export { default as Section } from './Section'
