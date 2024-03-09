@@ -1,5 +1,13 @@
-import { Collaboration, Header, Hero, Services } from './components'
-import Benefits from './components/Section/Benefits/Benefits'
+import {
+  Benefits,
+  Collaboration,
+  Footer,
+  Header,
+  Hero,
+  Pricing,
+  Roadmap,
+  Services
+} from './components'
 
 function App() {
   return (
@@ -10,6 +18,9 @@ function App() {
         <Benefits />
         <Collaboration />
         <Services />
+        <Pricing />
+        <Roadmap />
+        <Footer />
       </div>
     </>
   )

@@ -4,7 +4,7 @@ type Props = SVGComponent & {
   position: 'left' | 'right'
 }
 
-const brackets = ({ position = 'left', ...props }: Props) =>
+const Brackets = ({ position = 'left', ...props }: Props) =>
   position === 'left' ? (
     <svg
       width='5'
@@ -71,4 +71,4 @@ const brackets = ({ position = 'left', ...props }: Props) =>
     </svg>
   )
 
-export default brackets
+export default Brackets

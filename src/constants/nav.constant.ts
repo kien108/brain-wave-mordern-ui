@@ -5,5 +5,6 @@ export const SECTION_IDS = {
   HOW_TO_USE: 'how-to-use',
   ROADMAP: 'roadmap',
   SIGNUP: 'signup',
-  LOGIN: 'login'
+  LOGIN: 'login',
+  CONTACT: 'contact'
 }
