@@ -4,6 +4,8 @@ import { Heading } from '@/components/common'
 import { benefits } from '@/constants/mock-data.constant'
 import { Arrow, ClipPath } from '@/assets/svg'
 import { GradientLight } from '@/components/design/Benefits'
+import { fadeIn } from '@/utils'
+import { motion } from 'framer-motion'
 
 const Benefits = () => {
   return (
@@ -16,10 +18,11 @@ const Benefits = () => {
 
         <div className='flex flex-wrap gap-10 mb-10'>
           {benefits.map((item, index) => (
-            <div
+            <motion.div
               key={index}
               className='relative p-0.5 bg-no-repeat bg-[length:100%_100%] md:max-w-[24rem]'
               style={{ backgroundImage: `url(${item.backgroundUrl})` }}
+              variants={fadeIn('up', 'tween', 0.5 * index, 0.5)}
             >
               <div className='relative z-2 flex flex-col min-h-[22rem] p-[2.4rem] pointer-events-none'>
                 <h5 className='h5 mb-5'>{item.title}</h5>
@@ -58,7 +61,7 @@ const Benefits = () => {
               </div>
 
               <ClipPath />
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

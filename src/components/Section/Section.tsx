@@ -22,7 +22,7 @@ const Section = ({
       variants={staggerContainer(5, 0)}
       initial='hidden'
       whileInView={'show'}
-      viewport={{ once: true, amount: 0.25 }}
+      viewport={{ once: true, amount: 0.25, margin: '10px' }}
       {...props}
       className={`relative ${customPaddings || `py-10 lg:py-16 xl:py-20 ${crosses ? 'lg:py-32 xl:py-40' : ''} ${className || ''}`}`}
     >

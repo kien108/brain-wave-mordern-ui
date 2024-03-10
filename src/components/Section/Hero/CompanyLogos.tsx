@@ -1,19 +1,26 @@
 import { companyLogos } from '@/constants/mock-data.constant'
-import React from 'react'
+import { HTMLMotionProps, motion } from 'framer-motion'
+import { fadeIn } from '@/utils'
 
-interface IProps extends React.HTMLAttributes<HTMLDivElement> {}
+interface IProps extends HTMLMotionProps<'div'> {}
 const CompanyLogos = ({ className, ...props }: IProps) => {
   return (
-    <div
+    <motion.div
       {...props}
       className={className}
     >
-      <h5 className='tagline mb-6 text-center text-n-1/50'>Helping people create beautiful logo</h5>
+      <motion.h5
+        className='tagline mb-6 text-center text-n-1/50'
+        variants={fadeIn('up', 'tween', 0, 0.5)}
+      >
+        Helping people create beautiful logo
+      </motion.h5>
       <ul className='flex items-center justify-between'>
         {companyLogos.map((logo, index) => (
-          <li
+          <motion.li
             key={index}
             className='flex items-center justify-center h-[8.5rem]'
+            variants={fadeIn('up', 'tween', 0.5 * index, 0.5)}
           >
             <img
               src={logo}
@@ -21,10 +28,10 @@ const CompanyLogos = ({ className, ...props }: IProps) => {
               width={134}
               height={28}
             />
-          </li>
+          </motion.li>
         ))}
       </ul>
-    </div>
+    </motion.div>
   )
 }
 

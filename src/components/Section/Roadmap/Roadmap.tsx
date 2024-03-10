@@ -5,6 +5,7 @@ import { roadmap } from '@/constants/mock-data.constant'
 import { check2, grid, loading1 } from '@/assets'
 import { Gradient } from '@/components/design/Roadmap'
 import { Button } from '@/components'
+import { motion } from 'framer-motion'
 
 const Roadmap = () => {
   return (
@@ -19,15 +20,26 @@ const Roadmap = () => {
         />
 
         <div className='relative grid gap-6 md:grid-cols-2 md:gap-4 md:pb-[7rem]'>
-          {roadmap.map((item) => {
+          {roadmap.map((item, index) => {
             const status = item.status === 'done' ? 'Done' : 'In progress'
 
             return (
-              <div
+              <motion.div
                 className={`md:flex even:md:translate-y-[7rem] p-0.25 rounded-[2.5rem] ${
                   item.colorful ? 'bg-conic-gradient' : 'bg-n-6'
                 }`}
                 key={item.id}
+                initial={{
+                  opacity: 0
+                }}
+                whileInView={{
+                  opacity: 1,
+                  transition: {
+                    delay: 0.5 * index,
+                    duration: 0.5
+                  }
+                }}
+                viewport={{ once: true }}
               >
                 <div className='relative p-8 bg-n-8 rounded-[2.4375rem] overflow-hidden xl:p-15'>
                   <div className='absolute top-0 left-0 max-w-full'>
@@ -68,7 +80,7 @@ const Roadmap = () => {
                     <p className='body-2 text-n-4'>{item.text}</p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             )
           })}
 

@@ -21,7 +21,7 @@ const Nav = ({ openNavigation, handleToggleNavigation }: Props) => {
       <motion.nav
         variants={fadeIn('down', 'tween', 0.1, 0.25)}
         animate={!isDesktop ? (openNavigation ? 'show' : 'hidden') : ''}
-        className={`h-screen lg:h-auto flex fixed inset-0 ${!openNavigation && 'top-[5rem]'} left-0 right-0 bottom-0 bg-n-8 lg:static lg:flex lg:mx-auto lg:bg-transparent`}
+        className={`h-screen lg:h-auto flex fixed inset-0 ${!openNavigation && 'top-[5rem]'} left-0 right-0 bottom-0 bg-n-8 lg:static lg:flex lg:mx-auto lg:bg-transparent ${!openNavigation && !isDesktop ? 'hidden' : ''}`}
       >
         <ul
           className={`relative z-2 flex flex-col items-center justify-center m-auto lg:flex-row ${openNavigation ? '' : 'hidden md:flex'}`}

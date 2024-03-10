@@ -9,6 +9,8 @@ import {
   VideoBar,
   VideoChatMessage
 } from '@/components/design/Services'
+import { motion } from 'framer-motion'
+import { fadeIn } from '@/utils'
 
 const Services = () => {
   return (
@@ -20,7 +22,10 @@ const Services = () => {
         />
 
         <div className='relative'>
-          <div className='relative z-1 flex items-center h-[39rem] mb-5 p-8 border border-n-1/10 rounded-3xl overflow-hidden lg:p-20 xl:h-[46rem]'>
+          <motion.div
+            className='relative z-1 flex items-center h-[39rem] mb-5 p-8 border border-n-1/10 rounded-3xl overflow-hidden lg:p-20 xl:h-[46rem]'
+            variants={fadeIn('up', 'tween', 0.5, 0.5)}
+          >
             <div className='absolute top-0 left-0 w-full h-full pointer-events-none md:w-3/5 xl:w-auto'>
               <img
                 src={service1}
@@ -55,10 +60,13 @@ const Services = () => {
             </div>
 
             <Generating className='absolute left-4 right-4 bottom-4 border border-n-1/10 md:left-1/2 md-right-auto md:bottom-8 md:transform md:-translate-x-1/2' />
-          </div>
+          </motion.div>
 
           <div className='relative z-1 grid gap-5 lg:grid-cols-2'>
-            <div className='relative min-h-[39rem] border border-n-1/10 rounded-3xl overflow-hidden'>
+            <motion.div
+              className='relative min-h-[39rem] border border-n-1/10 rounded-3xl overflow-hidden'
+              variants={fadeIn('right', 'tween', 1, 0.5)}
+            >
               <div className='absolute inset-0'>
                 <img
                   src={service2}
@@ -78,9 +86,12 @@ const Services = () => {
               </div>
 
               <PhotoChatMessage />
-            </div>
+            </motion.div>
 
-            <div className='p-4 bg-n-7 rounded-3xl overflow-hidden lg:min-h-[46rem]'>
+            <motion.div
+              className='p-4 bg-n-7 rounded-3xl overflow-hidden lg:min-h-[46rem]'
+              variants={fadeIn('left', 'tween', 1.5, 0.5)}
+            >
               <div className='py-12 px-4 xl:px-8'>
                 <h4 className='h4 mb-4'>Video generation</h4>
                 <p className='body-2 mb-[3rem] text-n-3'>
@@ -125,7 +136,7 @@ const Services = () => {
                 <VideoChatMessage />
                 <VideoBar />
               </div>
-            </div>
+            </motion.div>
           </div>
 
           <Gradient />

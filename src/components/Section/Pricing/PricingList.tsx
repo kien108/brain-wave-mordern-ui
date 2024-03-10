@@ -2,14 +2,17 @@ import { check } from '@/assets'
 import { Button } from '@/components'
 import { pricing } from '@/constants/mock-data.constant'
 import { SECTION_IDS } from '@/constants/nav.constant'
+import { fadeIn } from '@/utils'
+import { motion } from 'framer-motion'
 
 const PricingList = () => {
   return (
     <div className='flex gap-4 max-lg:flex-wrap'>
-      {pricing.map((item) => (
-        <div
+      {pricing.map((item, index) => (
+        <motion.div
           className='w-[19rem] max-lg:w-full h-full px-6 bg-n-8 border border-n-6 rounded-[2rem] lg:w-auto even:py-14 odd:py-8 odd:mt-4 [&>h4]:first:text-color-2 [&>h4]:even:text-color-1 [&>h4]:last:text-color-3'
           key={item.id}
+          variants={fadeIn('up', 'tween', 0.5 * index + 0.5, 0.5)}
         >
           <h4 className='h4 mb-4'>{item.title}</h4>
 
@@ -48,7 +51,7 @@ const PricingList = () => {
               </li>
             ))}
           </ul>
-        </div>
+        </motion.div>
       ))}
     </div>
   )
